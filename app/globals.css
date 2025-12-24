@@ -16,3 +16,27 @@
     /* border */
     --border-image: url('/assets/border.svg') 10px round;
 }
+
+body {
+    @apply font-source text-text text-base bg-bg p-20;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    @apply font-dm text-header uppercase;
+}
+
+h1 {
+    @apply text-8xl;
+}
+
+h2 {
+    @apply text-5xl;
+}
+
+h3 {
+    @apply text-3xl;
+}
+
+h4 {
+    @apply text-xl;
+}
