@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+    /* fonts */
+    --font-dm: "DM Serif Text", serif;
+    --font-source: "Source Sans 3", sans-serif;
+
+    /* colours */
+    --color-header: #2E2B28;
+    --color-text: #5A5652;
+    --color-bg: #F6F3EF;
+    --color-accent: #C26A5A;
+    --color-accent-dark: #A95447;
+
+    /* border */
+    --border-image: url('/assets/border.svg') 10px round;
+}
