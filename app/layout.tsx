@@ -1,6 +1,9 @@
 import type { Metadata } from "next"
 import "./globals.css"
 import { ReactNode } from "react"
+import Menu from "@/components/layout/Menu"
+import PageTransition from "@/components/layout/PageTransition"
+import Footer from "@/components/layout/Footer"
 
 export const metadata: Metadata = {
   title: "Postcards Never Sent",
@@ -10,8 +13,14 @@ export const metadata: Metadata = {
 export default function RootLayout({ children, }: Readonly<{ children: ReactNode }>) {
     return (
         <html lang="en">
-            <body className="min-h-screen h-fit">
-                { children }
+            <body className="min-h-screen">
+                <Menu />
+
+                <PageTransition>
+                    { children }
+                </PageTransition>
+
+                <Footer />
             </body>
         </html>
     )

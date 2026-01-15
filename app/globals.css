@@ -14,7 +14,7 @@
     --color-accent-dark: #A95447;
 
     /* border */
-    --border-image: url('/assets/border.svg') 10px round;
+    --border-a: url('../assets/border.svg') 40 round;
 }
 
 body {

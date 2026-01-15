@@ -1,21 +1,21 @@
 import MainHeader from "@/components/ui/MainHeader"
-import SearchBar from "@/components/ui/SearchBar"
+import PostcardWrapper from "@/components/ui/PostcardWrapper"
 
-const MainPage = () =>  {
+const AboutPage = () => {
     return (
         <div>
             <MainHeader
-                headerText="Postcards never sent"
-                subheaderText="Messages that never found the courage to be sent"
+                headerText="About our project"
+                subheaderText="Send messages to your loved ones - anymously"
                 description="Postcards Never Sent is a place for words you never had a chance to send.
                             Write what you wish you had said, and who it was meant for.
                             Your message goes nowhere, and belongs to no one. It stays here, shared anonymously,
                             carried only by feeling."
             />
 
-            <SearchBar />
+            <PostcardWrapper />
         </div>
     )
 }
 
-export default MainPage
+export default AboutPage
