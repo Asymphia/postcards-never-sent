@@ -1,9 +1,12 @@
 import MainHeader from "@/components/ui/MainHeader"
-import PostcardWrapper from "@/components/ui/PostcardWrapper"
+import WhyExists from "@/components/about/WhyExists"
+import WhatMean from "@/components/about/WhatMean"
+import WhatHappens from "@/components/about/WhatHappens"
+import CreateYourOwn from "@/components/about/CreateYourOwn"
 
 const AboutPage = () => {
     return (
-        <div>
+        <div className="space-y-36">
             <MainHeader
                 headerText="About our project"
                 subheaderText="Send messages to your loved ones - anymously"
@@ -13,7 +16,13 @@ const AboutPage = () => {
                             carried only by feeling."
             />
 
-            <PostcardWrapper />
+            <WhyExists />
+
+            <WhatMean />
+
+            <WhatHappens />
+
+            <CreateYourOwn />
         </div>
     )
 }
