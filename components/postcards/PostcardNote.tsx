@@ -3,7 +3,7 @@ import PostcardWrapper from "@/components/postcards/PostcardWrapper"
 
 const PostcardNote = ({ text, rotate }: { text: string, rotate: number }) => {
     return (
-        <div style={{ transform: `rotate(${rotate}deg)` }} className="shadow-lg">
+        <div data-rotate={rotate} className="shadow-lg postcard-note">
             <PostcardWrapper>
                 <div className="w-full h-full relative flex justify-center items-center text-center">
                     <div className="absolute top-0 right-0">
