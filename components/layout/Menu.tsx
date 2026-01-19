@@ -102,7 +102,7 @@ const Menu = () => {
     }, [isOpen])
 
     return (
-        <div className="absolute top-10 right-10 flex flex-col items-end space-y-6">
+        <div className="fixed z-20 top-10 right-10 flex flex-col items-end space-y-6">
             <button aria-expanded={isOpen} aria-label={isOpen ? "Close menu" : "Open menu"} onClick={() => setIsOpen(prev => !prev)} className="cursor-pointer">
                 <svg
                     width="30"
