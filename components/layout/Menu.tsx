@@ -11,7 +11,7 @@ const Menu = () => {
         { href: "/", title: "Search" },
         { href: "/", title: "Create new" },
         { href: "/about", title: "About" },
-        { href: "/", title: "Contact us" },
+        { href: "/contact", title: "Contact us" },
         { href: "/", title: "Terms & conditions" },
     ]
 

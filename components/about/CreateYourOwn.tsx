@@ -63,7 +63,7 @@ const CreateYourOwn = () => {
                     shared briefly, and then released. Nothing is asked of them, and nothing is expected in return.
                 </p>
 
-                <Button />
+                <Button text="Create" />
             </div>
         </section>
     )

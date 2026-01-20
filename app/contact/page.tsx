@@ -1,14 +1,11 @@
 import MainHeader from "@/components/ui/MainHeader"
-import WhyExists from "@/components/about/WhyExists"
-import WhatMean from "@/components/about/WhatMean"
-import WhatHappens from "@/components/about/WhatHappens"
-import CreateYourOwn from "@/components/about/CreateYourOwn"
+import ContactForm from "@/components/contact/ContactForm"
 
-const AboutPage = () => {
+const ContactPage = () => {
     return (
         <div className="space-y-28">
             <MainHeader
-                headerText="About our project"
+                headerText="Contact us"
                 subheaderText="Send messages to your loved ones - anymously"
                 description="Postcards Never Sent is a place for words you never had a chance to send.
                             Write what you wish you had said, and who it was meant for.
@@ -16,15 +13,9 @@ const AboutPage = () => {
                             carried only by feeling."
             />
 
-            <WhyExists />
-
-            <WhatMean />
-
-            <WhatHappens />
-
-            <CreateYourOwn />
+            <ContactForm />
         </div>
     )
 }
 
-export default AboutPage
+export default ContactPage
