@@ -40,3 +40,7 @@ h3 {
 h4 {
     @apply text-xl;
 }
+
+ul {
+    @apply list-disc space-y-1 my-1 pl-16;
+}

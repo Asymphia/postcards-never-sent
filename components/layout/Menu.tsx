@@ -12,7 +12,7 @@ const Menu = () => {
         { href: "/", title: "Create new" },
         { href: "/about", title: "About" },
         { href: "/contact", title: "Contact us" },
-        { href: "/", title: "Terms & conditions" },
+        { href: "/terms-and-conditions", title: "Terms & conditions" },
     ]
 
     const navRef = useRef<HTMLDivElement>(null)
