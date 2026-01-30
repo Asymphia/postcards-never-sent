@@ -9,7 +9,7 @@ const Menu = () => {
 
     const links = [
         { href: "/", title: "Search" },
-        { href: "/", title: "Create new" },
+        { href: "/create", title: "Create new" },
         { href: "/about", title: "About" },
         { href: "/contact", title: "Contact us" },
         { href: "/terms-and-conditions", title: "Terms & conditions" },
