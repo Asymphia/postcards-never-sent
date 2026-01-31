@@ -1,6 +1,6 @@
 "use client"
 
-import stampFlower from "@/assets/stamp_flower.svg"
+import stampFlower from "@/assets/stamps/stamp_flower.svg"
 import Image from "next/image"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"

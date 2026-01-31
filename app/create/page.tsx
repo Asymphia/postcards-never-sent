@@ -8,7 +8,8 @@ const CreatePage = () => {
                 headerText="Create your postcard"
                 subheaderText="Submit your own postcard"
                 description="Create postcard to someone special to You. You can enter message to them,
-                    as well as your name or nickname and thair name or nickname"
+                    as well as your name or nickname and thair name or nickname. Then select ideal stamp
+                    and image for your postcard!"
             />
 
             <CreateForm />
