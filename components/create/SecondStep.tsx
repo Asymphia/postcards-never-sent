@@ -20,7 +20,6 @@ interface SecondStepProps {
 }
 
 const SecondStep = ({ text, from, to, selectedStamp, setSelectedStamp }: SecondStepProps) => {
-
     const dropTargetRef = useRef<HTMLDivElement>(null)
     const containerRef = useRef<HTMLDivElement>(null)
 
@@ -28,6 +27,7 @@ const SecondStep = ({ text, from, to, selectedStamp, setSelectedStamp }: SecondS
         const ctx = gsap.context(() => {
             const stamps = gsap.utils.toArray<HTMLElement>(".draggable-stamp")
             const target = dropTargetRef.current
+
             if (!target) return
 
             const positionSavedStamp = () => {
@@ -151,7 +151,7 @@ const SecondStep = ({ text, from, to, selectedStamp, setSelectedStamp }: SecondS
                 </div>
             </div>
             <p className="text-center">
-                Drag & Drop stamps in order to place them in the postcard.
+                { selectedStamp ? `Selected a stamp: ${selectedStamp}` : "Drag & drop a stamp to a postcard." }
             </p>
         </>
     )
