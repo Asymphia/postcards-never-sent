@@ -6,6 +6,7 @@ import { FormEvent, useState } from "react"
 import SecondStep from "@/components/create/SecondStep"
 import { postcardStamp } from "@/components/postcards/PostcardStamp"
 import { createMessage } from "@/app/actions"
+import Checkbox from "@/components/contact/Checkbox"
 
 const CreateForm = () => {
     const [currentStep, setCurrentStep] = useState<number>(0)
@@ -13,6 +14,7 @@ const CreateForm = () => {
     const [from, setFrom] = useState<string>("")
     const [to, setTo] = useState<string>("")
     const [selectedStamp, setSelectedStamp] = useState<postcardStamp | null>(null)
+    const [checked, setChecked] = useState<boolean>(false)
     const [error, setError] = useState<string | null>(null)
 
     const handleSecondStep = () => {
@@ -40,6 +42,9 @@ const CreateForm = () => {
         if(!selectedStamp) {
             setError("You must pick a stamp!")
             return
+        } else if (!checked) {
+            setError("You must accept terms & conditions!")
+            return
         }
 
         if (currentStep === 1) {
@@ -51,6 +56,14 @@ const CreateForm = () => {
             })
 
             if (result.success) {
+                setCurrentStep(0)
+                setText("")
+                setFrom("")
+                setTo("")
+                setSelectedStamp(null)
+                setChecked(false)
+                setError(null)
+
                 alert("Postcard sent!")
             } else {
                 setError(result.error || "Something went wrong!")
@@ -77,6 +90,9 @@ const CreateForm = () => {
                 <SecondStep from={from} to={to} text={text} selectedStamp={selectedStamp} setSelectedStamp={setSelectedStamp} />
             ) }
 
+            {
+                currentStep === 1 && <Checkbox isChecked={checked} toggleChecked={() => setChecked(prevState => !prevState)} />
+            }
 
             <div className="w-full flex justify-between">
                 <div className={`w-fit ${currentStep !== 1 && "opacity-0 pointer-events-none" }`}>

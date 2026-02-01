@@ -144,8 +144,8 @@ const SecondStep = ({ text, from, to, selectedStamp, setSelectedStamp }: SecondS
 
                 <div className="flex flex-col justify-between">
                     {stampListRight.map((s) => (
-                        <div key={s} className="draggable-stamp cursor-grab active:cursor-grabbing" data-stamp={s}>
-                            <PostcardStamp stamp={s} />
+                        <div key={ s } className="draggable-stamp cursor-grab active:cursor-grabbing" data-stamp={s}>
+                            <PostcardStamp stamp={ s } />
                         </div>
                     ))}
                 </div>
