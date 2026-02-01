@@ -2,9 +2,10 @@
 
 import FormControlButton from "@/components/ui/FormControlButton"
 import FirstStep from "@/components/create/FirstStep"
-import { useState } from "react"
+import { FormEvent, useState } from "react"
 import SecondStep from "@/components/create/SecondStep"
 import { postcardStamp } from "@/components/postcards/PostcardStamp"
+import { createMessage } from "@/app/actions"
 
 const CreateForm = () => {
     const [currentStep, setCurrentStep] = useState<number>(0)
@@ -12,10 +13,55 @@ const CreateForm = () => {
     const [from, setFrom] = useState<string>("")
     const [to, setTo] = useState<string>("")
     const [selectedStamp, setSelectedStamp] = useState<postcardStamp | null>(null)
+    const [error, setError] = useState<string | null>(null)
 
+    const handleSecondStep = () => {
+        setError(null)
+
+        if(!from) {
+            setError("You must write from who is the postcard!")
+            return
+        } else if (!to) {
+            setError("You must write to who is the postcard!")
+            return
+        } else if(!text) {
+            setError("You must provide the message!")
+            return
+        }
+
+        setCurrentStep(prevStep => prevStep + 1)
+    }
+
+    const handleSubmit = async (e: FormEvent) => {
+        e.preventDefault()
+
+        setError(null)
+
+        if(!selectedStamp) {
+            setError("You must pick a stamp!")
+            return
+        }
+
+        if (currentStep === 1) {
+            const result = await createMessage({
+                from,
+                to,
+                text,
+                selectedStamp
+            })
+
+            if (result.success) {
+                alert("Postcard sent!")
+            } else {
+                setError(result.error || "Something went wrong!")
+            }
+        }
+    }
 
     return (
-        <form className="mx-auto w-fit space-y-12">
+        <form onSubmit={handleSubmit} className="mx-auto w-fit space-y-8">
+            { error && <p className="text-center text-accent">{ error }</p> }
+
             { currentStep === 0 && (
                 <FirstStep
                     from={from}
@@ -33,12 +79,17 @@ const CreateForm = () => {
 
 
             <div className="w-full flex justify-between">
-                <div className={`w-fit ${currentStep === 0 && "opacity-0 pointer-events-none" }`}>
-                    <FormControlButton text="< Previous step" onClick={() => setCurrentStep(prevState => prevState - 1)} />
+                <div className={`w-fit ${currentStep !== 1 && "opacity-0 pointer-events-none" }`}>
+                    <FormControlButton text="< Previous step" onClick={ () => setCurrentStep(0) } />
                 </div>
 
-                `
-                <FormControlButton text={currentStep === 0 ? "Next step >" : "Submit a postcard"} onClick={() => setCurrentStep(prevState => prevState + 1)} />
+                <div className={`w-fit ${currentStep !== 0 && "opacity-0 pointer-events-none self-end" }`}>
+                    <FormControlButton text="Next step >" onClick={ handleSecondStep } />
+                </div>
+
+                <div className={`w-fit ${currentStep !== 1 && "hidden pointer-events-none" }`}>
+                    <FormControlButton text="Submit" type="submit" />
+                </div>
             </div>
         </form>
     )

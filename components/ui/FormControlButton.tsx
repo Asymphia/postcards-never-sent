@@ -1,6 +1,6 @@
-const FormControlButton = ({ text, onClick }: { text: string, onClick: () => void }) => {
+const FormControlButton = ({ text, onClick = () => {}, type="button" }: { text: string, onClick?: () => void, type?: "button" | "submit" }) => {
     return (
-        <button type="button" onClick={onClick} className="text-accent cursor-pointer transition-all hover:text-accent-dark">
+        <button type={ type } onClick={onClick} className="text-accent cursor-pointer transition-all hover:text-accent-dark">
             {text}
         </button>
     )

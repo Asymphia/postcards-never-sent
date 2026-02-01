@@ -1,0 +1,17 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Postcard {
+  id        Int      @id @default(autoincrement())
+  from      String
+  to        String
+  message   String   @db.Text
+  stampText String
+  createdAt DateTime @default(now())
+}
