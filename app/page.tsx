@@ -1,9 +1,10 @@
 import MainHeader from "@/components/ui/MainHeader"
 import SearchBar from "@/components/ui/SearchBar"
+import PostcardsResults from "@/components/search/PostcardsResults"
 
 const MainPage = () =>  {
     return (
-        <div>
+        <div className="space-y-12">
             <MainHeader
                 headerText="Postcards never sent"
                 subheaderText="Messages that never found the courage to be sent"
@@ -14,6 +15,8 @@ const MainPage = () =>  {
             />
 
             <SearchBar />
+
+            <PostcardsResults />
         </div>
     )
 }

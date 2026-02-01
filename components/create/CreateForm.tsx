@@ -5,7 +5,7 @@ import FirstStep from "@/components/create/FirstStep"
 import { FormEvent, useState } from "react"
 import SecondStep from "@/components/create/SecondStep"
 import { postcardStamp } from "@/components/postcards/PostcardStamp"
-import { createMessage } from "@/app/actions"
+import { createPostcard } from "@/app/actions"
 import Checkbox from "@/components/contact/Checkbox"
 
 const CreateForm = () => {
@@ -48,7 +48,7 @@ const CreateForm = () => {
         }
 
         if (currentStep === 1) {
-            const result = await createMessage({
+            const result = await createPostcard({
                 from,
                 to,
                 text,

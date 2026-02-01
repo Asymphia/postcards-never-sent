@@ -4,14 +4,14 @@ import prisma from "@/lib/prisma"
 import { revalidatePath } from "next/cache"
 import { postcardStamp } from "@/components/postcards/PostcardStamp"
 
-interface CreateMessageInput {
+interface CreatePostcardInput {
     from: string
     to: string
     text: string
     selectedStamp: postcardStamp
 }
 
-export const createMessage = async (data: CreateMessageInput) => {
+export const createPostcard = async (data: CreatePostcardInput) => {
     try {
         const newMessage = await prisma.postcard.create({
             data: {
@@ -26,5 +26,16 @@ export const createMessage = async (data: CreateMessageInput) => {
         return { success: true, id: newMessage.id }
     } catch (error) {
         return { success: false, error: "Database submission failed" }
+    }
+}
+
+export const getPostcards = async () => {
+    try {
+        const result = await prisma.postcard.findMany({})
+
+        revalidatePath("/")
+        return { success: true, result: result }
+    } catch (error) {
+        return { success: false, error: "Database fetching failed" }
     }
 }
