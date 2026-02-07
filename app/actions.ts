@@ -33,7 +33,25 @@ export const getPostcards = async () => {
     try {
         const result = await prisma.postcard.findMany({})
 
+        if (!result) {
+            return { success: true, result: null }
+        }
+
         revalidatePath("/")
+        return { success: true, result: result }
+    } catch (error) {
+        return { success: false, error: "Database fetching failed" }
+    }
+}
+
+export const getPostcard = async (id: number) => {
+    try {
+        const result = await prisma.postcard.findUnique({ where: { id } })
+
+        if (!result) {
+            return { success: true, result: null }
+        }
+
         return { success: true, result: result }
     } catch (error) {
         return { success: false, error: "Database fetching failed" }
