@@ -1,6 +1,5 @@
 import MainHeader from "@/components/ui/MainHeader"
-import SearchBar from "@/components/ui/SearchBar"
-import PostcardsResults from "@/components/search/PostcardsResults"
+import SearchContent from "@/components/search/SearchContent"
 
 const MainPage = () =>  {
     return (
@@ -14,9 +13,7 @@ const MainPage = () =>  {
                             carried only by feeling."
             />
 
-            <SearchBar />
-
-            <PostcardsResults />
+            <SearchContent />
         </div>
     )
 }

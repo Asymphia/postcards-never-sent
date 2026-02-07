@@ -4,7 +4,7 @@ import prisma from "@/lib/prisma"
 import { revalidatePath } from "next/cache"
 import { postcardStamp } from "@/components/postcards/PostcardStamp"
 
-interface CreatePostcardInput {
+export interface CreatePostcardInput {
     from: string
     to: string
     text: string

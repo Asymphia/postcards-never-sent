@@ -1,37 +1,30 @@
-"use client"
-
-import { Postcard as PostcardT } from "@prisma/client"
-import { useEffect, useState } from "react"
-import {getPostcards} from "@/app/actions"
 import Postcard from "@/components/postcards/Postcard"
-import {postcardStamp} from "@/components/postcards/PostcardStamp";
+import { postcardStamp } from "@/components/postcards/PostcardStamp"
+import Link from "next/link"
+import Loader from "@/components/ui/Loader"
+import { Postcard as PostcardT } from "@prisma/client"
 
-const PostcardsResults = () => {
-    const [postcards, setPostcards] = useState<PostcardT[]>([])
-    const [error, setError] = useState<string | null>(null)
+const PostcardsResults = ({ error, loading, postcards }: { error?: string | null, loading?: boolean, postcards?: PostcardT[] }) => {
 
-    useEffect(() => {
-        const fetch = async () => {
-            const results = await getPostcards()
+    if(error){
+        return <p className="text-accent text-center">{ error }</p>
+    }
 
-            if(results.error) {
-                setError(results.error || "Something went wrong")
-                return
-            }
+    if(loading){
+        return <Loader />
+    }
 
-            if(results.result) {
-                setPostcards(results.result)
-            }
-        }
-
-        fetch()
-    }, [])
+    if(!postcards || postcards.length === 0){
+        return <p className="text-accent text-center">No postcards found.</p>
+    }
 
     return (
         <div className="grid grid-cols-3 gap-5">
             {
                 postcards && postcards.length > 0 && postcards.map(postcard => (
-                    <Postcard from={postcard.from} to={postcard.to} text={postcard.message} stamp={postcard.stampText as postcardStamp} />
+                    <Link href={`/postcard/${postcard.id}`} key={postcard.id}>
+                        <Postcard from={postcard.from} to={postcard.to} text={postcard.message} stamp={postcard.stampText as postcardStamp} />
+                    </Link>
                 ))
             }
         </div>
