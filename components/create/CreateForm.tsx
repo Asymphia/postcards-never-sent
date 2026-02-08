@@ -7,7 +7,7 @@ import SecondStep from "@/components/create/SecondStep"
 import { postcardStamp } from "@/components/postcards/PostcardStamp"
 import { createPostcard } from "@/app/actions"
 import Checkbox from "@/components/contact/Checkbox"
-import Modal from "@/components/create/Modal";
+import Modal from "@/components/create/Modal"
 
 const CreateForm = () => {
     const [currentStep, setCurrentStep] = useState<number>(0)

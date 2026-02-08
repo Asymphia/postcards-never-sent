@@ -129,6 +129,7 @@ const Menu = () => {
                                 if(el) linksRef.current[i] = el
                             }}
                             className="transition-colors hover:text-accent active:text-accent-dark pointer-events-auto"
+                            onClick={() => setIsOpen(prev => !prev)}
                         >
                             { link.title }
                         </Link>
