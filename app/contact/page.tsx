@@ -3,7 +3,7 @@ import ContactForm from "@/components/contact/ContactForm"
 
 const ContactPage = () => {
     return (
-        <div className="space-y-28">
+        <div className="xl:space-y-28 md:space-y-16 space-y-12">
             <MainHeader
                 headerText="Contact us"
                 subheaderText="Send messages to your loved ones - anymously"
