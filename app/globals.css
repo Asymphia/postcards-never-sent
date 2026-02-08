@@ -18,7 +18,7 @@
 }
 
 body {
-    @apply font-source text-text text-base bg-bg py-20 px-16;
+    @apply font-source text-text xl:text-base md:text-sm text-xs bg-bg xl:py-20 md:py-16 py-14 xl:px-16 md:px-12 px-4;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -26,21 +26,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    @apply text-8xl;
+    @apply xl:text-8xl md:text-6xl text-5xl;
 }
 
 h2 {
-    @apply text-5xl leading-tight;
+    @apply xl:text-5xl md:text-4xl text-2xl leading-tight;
 }
 
 h3 {
-    @apply text-3xl;
+    @apply xl:text-3xl md:text-2xl text-xl;
 }
 
 h4 {
-    @apply text-xl;
+    @apply xl:text-xl md:text-lg text-base;
 }
 
 ul {
-    @apply list-disc space-y-1 my-1 pl-16;
+    @apply list-disc space-y-1 my-1 xl:pl-16 md:pl-12 pl-8;
 }

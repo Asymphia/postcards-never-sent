@@ -6,7 +6,7 @@ import Anchor from "@/components/terms-and-conditions/Anchor"
 
 const TermsAndConditionsPage = () => {
     return (
-        <div className="space-y-28">
+        <div className="xl:space-y-28 md:space-y-16 space-y-12">
             <MainHeader
                 headerText="Terms & conditions"
                 subheaderText="Last updated: 20 January 2026"
@@ -16,7 +16,7 @@ const TermsAndConditionsPage = () => {
                             carried only by feeling."
             />
 
-            <article className="max-w-[75rem] mx-auto space-y-16">
+            <article className="max-w-[75rem] mx-auto xl:space-y-16 md:space-y-12 space-y-8">
                 {
                     SECTIONS.map(section => (
                         <section key={section.id} className="space-y-4">

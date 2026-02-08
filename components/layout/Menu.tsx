@@ -102,7 +102,7 @@ const Menu = () => {
     }, [isOpen])
 
     return (
-        <div className="fixed z-20 top-10 right-10 flex flex-col items-end space-y-6">
+        <div className="fixed z-20 xl:top-10 xl:right-10 md:top-6 md:right-6 top-4 right-4 flex flex-col items-end xl:space-y-6 space-y-4">
             <button aria-expanded={isOpen} aria-label={isOpen ? "Close menu" : "Open menu"} onClick={() => setIsOpen(prev => !prev)} className="cursor-pointer">
                 <svg
                     width="30"
@@ -119,7 +119,7 @@ const Menu = () => {
                 </svg>
             </button>
 
-            <nav ref={navRef} className="font-dm text-header text-xl flex flex-col text-right space-y-1 pointer-events-none">
+            <nav ref={navRef} className="font-dm text-header xl:text-xl md:text-lg text-base flex flex-col text-right xl:space-y-1 space-y-0 pointer-events-none">
                 {
                     links.map((link, i) => (
                         <Link
