@@ -7,6 +7,7 @@ import SecondStep from "@/components/create/SecondStep"
 import { postcardStamp } from "@/components/postcards/PostcardStamp"
 import { createPostcard } from "@/app/actions"
 import Checkbox from "@/components/contact/Checkbox"
+import Modal from "@/components/create/Modal";
 
 const CreateForm = () => {
     const [currentStep, setCurrentStep] = useState<number>(0)
@@ -16,6 +17,8 @@ const CreateForm = () => {
     const [selectedStamp, setSelectedStamp] = useState<postcardStamp | null>(null)
     const [checked, setChecked] = useState<boolean>(false)
     const [error, setError] = useState<string | null>(null)
+    const [loading, setLoading] = useState<boolean>(false)
+    const [send, setSend] = useState<boolean>(false)
 
     const handleSecondStep = () => {
         setError(null)
@@ -47,6 +50,8 @@ const CreateForm = () => {
             return
         }
 
+        setLoading(true)
+
         if (currentStep === 1) {
             const result = await createPostcard({
                 from,
@@ -63,9 +68,10 @@ const CreateForm = () => {
                 setSelectedStamp(null)
                 setChecked(false)
                 setError(null)
-
-                alert("Postcard sent!")
+                setLoading(false)
+                setSend(true)
             } else {
+                setLoading(false)
                 setError(result.error || "Something went wrong!")
             }
         }
@@ -104,9 +110,13 @@ const CreateForm = () => {
                 </div>
 
                 <div className={`w-fit ${currentStep !== 1 && "hidden pointer-events-none" }`}>
-                    <FormControlButton text="Submit" type="submit" />
+                    <FormControlButton text={ loading ? "Loading..." : "Submit" } type="submit" />
                 </div>
             </div>
+
+            {
+                send && <Modal />
+            }
         </form>
     )
 }

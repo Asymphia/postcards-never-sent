@@ -2,7 +2,7 @@ const Footer = () => {
     const year = new Date().getFullYear()
 
     return (
-        <footer className="pt-36 flex justify-center flex-col text-center space-y-3">
+        <footer className="pt-20 flex justify-center flex-col text-center space-y-3">
             <h4>
                 Postcards never sent
             </h4>
