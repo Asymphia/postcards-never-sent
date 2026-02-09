@@ -8,7 +8,8 @@ const Menu = () => {
     const [isOpen, setIsOpen] = useState(false)
 
     const links = [
-        { href: "/", title: "Search" },
+        { href: "/", title: "Home" },
+        { href: "/postcards", title: "Postcards" },
         { href: "/create", title: "Create new" },
         { href: "/about", title: "About" },
         { href: "/contact", title: "Contact us" },
@@ -39,8 +40,8 @@ const Menu = () => {
                 opacity: 1,
                 y: 0,
                 duration: 0.35,
-                ease: "circ.out",
-                stagger: 0.06,
+                ease: "circ.inOut",
+                stagger: 0.1,
             }
         )
     }, [])

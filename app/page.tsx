@@ -1,19 +1,31 @@
 import MainHeader from "@/components/ui/MainHeader"
-import SearchContent from "@/components/search/SearchContent"
+import Button from "@/components/ui/Button"
+import PostcardsCarousel from "@/components/home/PostcardsCarousel"
+import Link from "next/link";
 
-const MainPage = () =>  {
+const MainPage = () => {
     return (
-        <div className="space-y-12">
+        <div className="xl:space-y-28 md:space-y-16 space-y-12">
             <MainHeader
                 headerText="Postcards never sent"
-                subheaderText="Messages that never found the courage to be sent"
+                subheaderText="Send messages to your loved ones - anymously"
                 description="Postcards Never Sent is a place for words you never had a chance to send.
                             Write what you wish you had said, and who it was meant for.
                             Your message goes nowhere, and belongs to no one. It stays here, shared anonymously,
                             carried only by feeling."
             />
 
-            <SearchContent />
+            <div className="w-fit mx-auto space-x-4">
+                <Link href="/postcards">
+                    <Button text="Read postcards"  />
+                </Link>
+
+                <Link href="/create">
+                    <Button text="Create ones" type="secondary"  />
+                </Link>
+            </div>
+
+            <PostcardsCarousel />
         </div>
     )
 }

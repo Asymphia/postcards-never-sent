@@ -6,7 +6,7 @@ import CreateYourOwn from "@/components/about/CreateYourOwn"
 
 const AboutPage = () => {
     return (
-        <div className="space-y-28">
+        <div className="xl:space-y-28 md:space-y-16 space-y-12">
             <MainHeader
                 headerText="About our project"
                 subheaderText="Send messages to your loved ones - anymously"
