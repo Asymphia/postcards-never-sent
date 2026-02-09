@@ -1,8 +1,7 @@
 import { notFound } from "next/navigation"
 import { getPostcard } from "@/app/actions"
-import Postcard from "@/components/postcards/Postcard"
-import { postcardStamp } from "@/components/postcards/PostcardStamp"
 import GoBackButton from "@/components/ui/GoBackButton"
+import FullCard from "@/components/single-postcard/FullCard"
 
 const PostcardPage = async ({ params }: { params: { id: string } }) => {
     const { id } = await params
@@ -23,7 +22,7 @@ const PostcardPage = async ({ params }: { params: { id: string } }) => {
 
     return (
         <div className="mx-auto w-fit space-y-8">
-            <Postcard text={postcard.message} from={postcard.from} to={postcard.to} stamp={postcard.stampText as postcardStamp} />
+            <FullCard postcard={postcard} type="modal" />
 
             <GoBackButton />
         </div>

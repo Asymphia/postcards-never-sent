@@ -3,6 +3,7 @@ import { getPostcard } from "@/app/actions"
 import { postcardStamp } from "@/components/postcards/PostcardStamp"
 import Postcard from "@/components/postcards/Postcard"
 import Modal from "@/components/ui/Modal"
+import FullCard from "@/components/single-postcard/FullCard"
 
 const PostcardModal = async ({ params }: { params: { id: string } }) => {
     const { id } = await params
@@ -23,7 +24,7 @@ const PostcardModal = async ({ params }: { params: { id: string } }) => {
 
     return (
         <Modal additionalStyles={false}>
-            <Postcard text={postcard.message} from={postcard.from} to={postcard.to} stamp={postcard.stampText as postcardStamp} />
+            <FullCard postcard={postcard} type="single" />
         </Modal>
     )
 }
