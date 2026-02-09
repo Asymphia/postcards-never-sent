@@ -6,7 +6,7 @@ const GoBackButton = () => {
     const router = useRouter()
 
     return (
-        <button className="text-accent transition-all hover:text-accent-dark cursor-pointer" onClick={router.back} type="button">
+        <button className="text-accent transition-all hover:text-accent-dark cursor-pointer" onClick={() => router.push("/postcards")} type="button">
             &lt; Go back
         </button>
     )

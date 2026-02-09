@@ -1,16 +1,10 @@
 import { notFound } from "next/navigation"
 import { getPostcard } from "@/app/actions"
-import Postcard from "@/components/postcards/Postcard"
 import { postcardStamp } from "@/components/postcards/PostcardStamp"
-import GoBackButton from "@/components/ui/GoBackButton";
+import Postcard from "@/components/postcards/Postcard"
+import Modal from "@/components/ui/Modal"
 
-interface PostcardDetailsProps {
-    params: {
-        id: string
-    }
-}
-
-const PostcardDetails = async ({ params }: PostcardDetailsProps) => {
+const PostcardModal = async ({ params }: { params: { id: string } }) => {
     const { id } = await params
     const numericId = Number(id)
 
@@ -21,19 +15,17 @@ const PostcardDetails = async ({ params }: PostcardDetailsProps) => {
     const results = await getPostcard(numericId)
 
     if(!results.success) {
-        throw new Error(results.error || "An error occurred");
+        throw new Error(results.error || "An error occurred")
     }
 
     const postcard = results.result
     if (!postcard) notFound()
 
     return (
-        <div className="mx-auto w-fit space-y-8">
+        <Modal additionalStyles={false}>
             <Postcard text={postcard.message} from={postcard.from} to={postcard.to} stamp={postcard.stampText as postcardStamp} />
-
-            <GoBackButton />
-        </div>
+        </Modal>
     )
 }
 
-export default PostcardDetails
+export default PostcardModal

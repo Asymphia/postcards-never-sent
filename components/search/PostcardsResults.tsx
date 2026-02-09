@@ -22,7 +22,7 @@ const PostcardsResults = ({ error, loading, postcards }: { error?: string | null
         <div className="grid grid-cols-3 gap-5">
             {
                 postcards && postcards.length > 0 && postcards.map(postcard => (
-                    <Link href={`/postcard/${postcard.id}`} key={postcard.id}>
+                    <Link href={`/postcards/${postcard.id}`} key={postcard.id}>
                         <Postcard from={postcard.from} to={postcard.to} text={postcard.message} stamp={postcard.stampText as postcardStamp} />
                     </Link>
                 ))

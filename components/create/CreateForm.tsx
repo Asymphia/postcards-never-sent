@@ -7,7 +7,9 @@ import SecondStep from "@/components/create/SecondStep"
 import { postcardStamp } from "@/components/postcards/PostcardStamp"
 import { createPostcard } from "@/app/actions"
 import Checkbox from "@/components/contact/Checkbox"
-import Modal from "@/components/create/Modal"
+import Modal from "@/components/ui/Modal"
+import Image from "next/image"
+import checkmark from "@/assets/checkmark.svg"
 
 const CreateForm = () => {
     const [currentStep, setCurrentStep] = useState<number>(0)
@@ -115,7 +117,14 @@ const CreateForm = () => {
             </div>
 
             {
-                send && <Modal />
+                send && <Modal href="/postcards">
+                    <>
+                        <Image src={checkmark} alt="checkmark image" width={30} />
+                        <p className="text-text">
+                            Your postcard was successfully submitted
+                        </p>
+                    </>
+                </Modal>
             }
         </form>
     )
