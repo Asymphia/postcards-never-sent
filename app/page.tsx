@@ -1,7 +1,6 @@
 import MainHeader from "@/components/ui/MainHeader"
-import Button from "@/components/ui/Button"
 import PostcardsCarousel from "@/components/home/PostcardsCarousel"
-import Link from "next/link";
+import TwoButtons from "@/components/ui/TwoButtons"
 
 const MainPage = () => {
     return (
@@ -15,15 +14,7 @@ const MainPage = () => {
                             carried only by feeling."
             />
 
-            <div className="w-fit mx-auto space-x-4">
-                <Link href="/postcards">
-                    <Button text="Read postcards"  />
-                </Link>
-
-                <Link href="/create">
-                    <Button text="Create ones" type="secondary"  />
-                </Link>
-            </div>
+            <TwoButtons leftText="Read postcards" rightText="Create one" leftHref="/postcards" rightHref="/create" />
 
             <PostcardsCarousel />
         </div>
