@@ -57,7 +57,7 @@ const StampsHeart = () => {
     ]
 
     return (
-        <div ref={containerRef} className="py-20 overflow-hidden w-full flex justify-center">
+        <div ref={containerRef} className="py-20 overflow-visible w-full flex justify-center">
             <div className="grid w-fit gap-1"
                  style={{
                      gridTemplateColumns: "repeat(7, 1fr)",

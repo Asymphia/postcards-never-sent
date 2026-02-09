@@ -41,7 +41,7 @@ const CreateYourOwn = () => {
     }, [])
 
     return (
-        <section ref={containerRef} className="w-full max-w-[75rem] mx-auto grid grid-cols-2 gap-20 items-center overflow-hidden">
+        <section ref={containerRef} className="w-full max-w-[75rem] mx-auto grid grid-cols-2 gap-20 items-center overflow-x-visible">
             <div ref={postcardRef}>
                 <Postcard
                     stamp="flower"
