@@ -22,7 +22,7 @@ const PostcardModal = async ({ params }: { params: { id: string } }) => {
 
     return (
         <Modal additionalStyles={false}>
-            <div className="w-full max-w-[36rem]">
+            <div className="xl:w-[36rem] md:w-[32rem] w-[26rem]">
                 <FullCard postcard={postcard} type="single" />
             </div>
         </Modal>

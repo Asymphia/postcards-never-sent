@@ -21,7 +21,7 @@ const PostcardPage = async ({ params }: { params: { id: string } }) => {
     if (!postcard) notFound()
 
     return (
-        <div className="w-full max-w-[36rem] mx-auto space-y-8">
+        <div className="w-full xl:max-w-[36rem] md:max-w-[32rem] max-w-[26rem] mx-auto space-y-8">
             <FullCard postcard={postcard} type="modal" />
 
             <GoBackButton />
