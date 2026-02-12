@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 const CreatePage = () => {
     return (
-        <div className="space-y-28">
+        <div className="xl:space-y-28 md:space-y-16 space-y-12">
             <MainHeader
                 headerText="Create your postcard"
                 subheaderText="Write what was never sent"

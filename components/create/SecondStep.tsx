@@ -116,8 +116,8 @@ const SecondStep = ({ text, from, to, selectedStamp, setSelectedStamp }: SecondS
 
     return (
         <>
-            <div ref={containerRef} className="flex gap-x-10">
-                <div className="flex flex-col justify-between">
+            <div ref={containerRef} className="md:flex md:gap-x-10 md:space-y-0 space-y-6">
+                <div className="flex md:flex-col justify-between">
                     {stampListLeft.map((s) => (
                         <div key={s} className="draggable-stamp cursor-grab active:cursor-grabbing" data-stamp={s}>
                             <PostcardStamp stamp={s} />
@@ -133,7 +133,7 @@ const SecondStep = ({ text, from, to, selectedStamp, setSelectedStamp }: SecondS
 
 
                         <div className="flex flex-col justify-between items-end">
-                            <div className={`size-16 border-2 border-solid  transition-all ${!selectedStamp ? "border-accent" : "border-bg"}`} ref={dropTargetRef}>
+                            <div className={`xl:size-16 md:size-14 size-12 border-2 border-solid  transition-all ${!selectedStamp ? "border-accent" : "border-bg"}`} ref={dropTargetRef}>
 
                             </div>
 
@@ -142,7 +142,7 @@ const SecondStep = ({ text, from, to, selectedStamp, setSelectedStamp }: SecondS
                     </div>
                 </PostcardWrapper>
 
-                <div className="flex flex-col justify-between">
+                <div className="flex md:flex-col justify-between">
                     {stampListRight.map((s) => (
                         <div key={ s } className="draggable-stamp cursor-grab active:cursor-grabbing" data-stamp={s}>
                             <PostcardStamp stamp={ s } />

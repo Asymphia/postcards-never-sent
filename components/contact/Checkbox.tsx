@@ -9,8 +9,8 @@ interface CheckboxProps {
 
 const Checkbox = ({ isChecked, toggleChecked }: CheckboxProps) => {
     return (
-        <label className="flex space-x-2 cursor-pointer" >
-            <div className={`w-5 h-5 relative after:transition-all after:rounded-sm after:w-5 after:h-5 after:absolute after:border-1 after:border-solid  ${isChecked ? "after:bg-accent after:border-bg" : "after:bg-bg after:border-accent"}`}>
+        <label className="flex space-x-2 cursor-pointer items-center" >
+            <div className={`xl:size-5 size-4 relative after:transition-all after:rounded-sm xl:after:size-5 after:size-4 after:absolute after:border-1 after:border-solid  ${isChecked ? "after:bg-accent after:border-bg" : "after:bg-bg after:border-accent"}`}>
                 <input
                     onChange={toggleChecked}
                     checked={isChecked}

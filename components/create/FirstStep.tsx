@@ -42,7 +42,7 @@ const FirstStep = ({ from, onChangeFrom, to, onChangeTo, text, onChangeText }: F
                     </div>
 
 
-                    <div className="font-dm text-header text-xl space-y-3 self-end">
+                    <div className="font-dm text-header xl:text-xl md:text-lg text-base space-y-3 self-end">
                         <p className="border-b-2 border-b-solid border-b-accent pb-1 flex flex-nowrap gap-2">
                             FROM:
                             <input
