@@ -25,7 +25,7 @@ const PostcardStamp = ({ stamp = "flower" }: { stamp: postcardStamp }) => {
     }
 
     return (
-        <div className="size-16 pointer-events-none select-none">
+        <div className="xl:size-16 md:size-14 size-12 pointer-events-none select-none">
             <Image src={stampImg} alt={`Stamp ${stamp}`} className="w-full h-full object-contain" />
         </div>
     )

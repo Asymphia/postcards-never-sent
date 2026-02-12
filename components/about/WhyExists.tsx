@@ -39,8 +39,8 @@ const WhyExists = () => {
     }, [])
 
     return (
-        <section ref={containerRef} className="grid grid-cols-[36rem_1fr_36rem] gap-10 items-center w-full overflow-x-visible">
-            <div ref={leftPostcardRef}>
+        <section ref={containerRef} className="md:grid md:grid-cols-[36rem_1fr_36rem] md:gap-10 md:space-y-0 space-y-8 items-center w-full overflow-x-visible">
+            <div ref={leftPostcardRef} className="md:block hidden">
                 <Postcard
                     stamp="coffee"
                     from="Me you loved"
@@ -52,7 +52,7 @@ const WhyExists = () => {
                 />
             </div>
 
-            <div className="text-center space-y-10">
+            <div className="text-center xl:space-y-10 md:space-y-8 space-y-6">
                 <h2>
                     Why this place even exists
                 </h2>

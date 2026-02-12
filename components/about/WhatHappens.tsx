@@ -2,9 +2,9 @@ import StampsHeart from "@/components/about/StampsHeart"
 
 const WhatHappens = () => {
     return (
-        <section className="w-full max-w-[75rem] mx-auto grid grid-cols-2 gap-20 items-center">
-            <div className="space-y-10">
-                <h2>
+        <section className="w-full max-w-[75rem] mx-auto grid md:grid-cols-2 grid-cols-1 xl:gap-20 md:gap-12 gap-10 items-center">
+            <div className="xl:space-y-10 md:space-y-8 space-y-6">
+                <h2 className="md:text-left text-center">
                     What happens to the postcards
                 </h2>
 

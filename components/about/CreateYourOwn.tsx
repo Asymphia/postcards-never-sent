@@ -41,8 +41,8 @@ const CreateYourOwn = () => {
     }, [])
 
     return (
-        <section ref={containerRef} className="w-full max-w-[75rem] mx-auto grid grid-cols-2 gap-20 items-center overflow-x-visible">
-            <div ref={postcardRef}>
+        <section ref={containerRef} className="w-full max-w-[75rem] mx-auto grid md:grid-cols-2 grid-cols-1 xl:gap-20 md:gap-12 gap-10 items-center overflow-x-visible">
+            <div ref={postcardRef} className="md:block hidden">
                 <Postcard
                     stamp="blue flowers"
                     from="The city you left behind"
@@ -53,8 +53,8 @@ const CreateYourOwn = () => {
                 />
             </div>
 
-            <div className="space-y-10">
-                <h2>
+            <div className="xl:space-y-10 md:space-y-8 space-y-6">
+                <h2 className="md:text-left text-center">
                     Create your own postcard today!
                 </h2>
 
@@ -65,7 +65,9 @@ const CreateYourOwn = () => {
                     shared briefly, and then released. Nothing is asked of them, and nothing is expected in return.
                 </p>
 
-                <Button text="Create" />
+                <div className="md:text-left text-right">
+                    <Button text="Create" />
+                </div>
             </div>
         </section>
     )
