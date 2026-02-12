@@ -1,12 +1,26 @@
 "use client"
 
-import stampFlower from "@/assets/stamps/stamp_flower.svg"
-import Image from "next/image"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { useEffect, useRef } from "react"
+import {useEffect, useMemo, useRef} from "react"
+import PostcardStamp, { postcardStamp } from "@/components/postcards/PostcardStamp"
 
 gsap.registerPlugin(ScrollTrigger)
+
+const STAMPS: postcardStamp[] = [
+    "flower",
+    "christmas",
+    "coffee",
+    "books",
+    "mountains",
+    "plum",
+    "pink flowers",
+    "blue flowers",
+]
+
+const getRandomStamp = (): postcardStamp => {
+    return STAMPS[Math.floor(Math.random() * STAMPS.length)]
+}
 
 const StampsHeart = () => {
     const containerRef = useRef<HTMLDivElement>(null)
@@ -56,6 +70,11 @@ const StampsHeart = () => {
         "Heart9","Heart10","Heart11","Heart12","Heart13","Heart15","Heart16","Heart17"
     ]
 
+    const randomStamps = useMemo(
+        () => heartAreas.map(() => getRandomStamp()),
+        []
+    )
+
     return (
         <div ref={containerRef} className="py-20 overflow-visible w-full flex justify-center">
             <div className="grid w-fit gap-1"
@@ -74,17 +93,13 @@ const StampsHeart = () => {
                  }}
             >
                 {
-                    heartAreas.map((area) => (
+                    heartAreas.map((area, index) => (
                         <div
                             key={area}
                             style={{ gridArea: area }}
                             className="stamp-item flex justify-center items-center"
                         >
-                            <Image
-                                src={stampFlower}
-                                alt="A stamp with a flower"
-                                className="w-16 h-16 pointer-events-none"
-                            />
+                            <PostcardStamp stamp={randomStamps[index]} />
                         </div>
                     ))
                 }

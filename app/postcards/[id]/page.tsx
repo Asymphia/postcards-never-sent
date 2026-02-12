@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation"
-import { getPostcard } from "@/app/actions"
+import { getPostcard } from "@/actions/actions"
 import GoBackButton from "@/components/ui/GoBackButton"
 import FullCard from "@/components/single-postcard/FullCard"
 

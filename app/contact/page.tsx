@@ -6,11 +6,10 @@ const ContactPage = () => {
         <div className="xl:space-y-28 md:space-y-16 space-y-12">
             <MainHeader
                 headerText="Contact us"
-                subheaderText="Send messages to your loved ones - anymously"
-                description="Postcards Never Sent is a place for words you never had a chance to send.
-                            Write what you wish you had said, and who it was meant for.
-                            Your message goes nowhere, and belongs to no one. It stays here, shared anonymously,
-                            carried only by feeling."
+                subheaderText="Reach us beyond the postcards"
+                description="Have a question, suggestion, or something you’d like to share with us directly?
+                    This is the only message that actually arrives. Reach out about feedback, ideas, partnerships,
+                    or anything that could help shape Postcards Never Sent. We’re listening."
             />
 
             <ContactForm />

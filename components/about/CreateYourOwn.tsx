@@ -44,10 +44,12 @@ const CreateYourOwn = () => {
         <section ref={containerRef} className="w-full max-w-[75rem] mx-auto grid grid-cols-2 gap-20 items-center overflow-x-visible">
             <div ref={postcardRef}>
                 <Postcard
-                    stamp="flower"
-                    from="abc"
-                    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel ligula iaculis, mollis tellus semper, aliquet felis. Suspendisse et ligula at nunc tincidunt egestas vitae ut eros. Aliquam quis sem ac ligula bibendum pellentesque eu sit amet enim. Mauris rhoncus turpis ac venenatis suscipit. In accumsan est at felis ornaresit amet finibus turpis ultrices. Nunc varius finibus laoreet."
-                    to="xyz"
+                    stamp="blue flowers"
+                    from="The city you left behind"
+                    text="You think I don’t remember you, but I do. The café where you hid from the rain still keeps
+                        your corner table. The streets still echo with your hurried footsteps. You were certain
+                        leaving meant starting over. Maybe it just meant carrying me differently — in memory instead of maps."
+                    to="The one who said goodbye"
                 />
             </div>
 

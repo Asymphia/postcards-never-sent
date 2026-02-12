@@ -10,10 +10,9 @@ const TermsAndConditionsPage = () => {
             <MainHeader
                 headerText="Terms & conditions"
                 subheaderText="Last updated: 20 January 2026"
-                description="Postcards Never Sent is a place for words you never had a chance to send.
-                            Write what you wish you had said, and who it was meant for.
-                            Your message goes nowhere, and belongs to no one. It stays here, shared anonymously,
-                            carried only by feeling."
+                description="These Terms & Conditions outline the rules for using Postcards Never Sent.
+                    By accessing or submitting a postcard, you agree to respect our guidelines,
+                    protect others’ privacy, and use this space responsibly and lawfully."
             />
 
             <article className="max-w-[75rem] mx-auto xl:space-y-16 md:space-y-12 space-y-8">

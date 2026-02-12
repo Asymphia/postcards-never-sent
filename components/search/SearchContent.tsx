@@ -2,7 +2,7 @@
 
 import {useCallback, useEffect, useState} from "react"
 import { Postcard as PostcardT } from "@prisma/client"
-import { getPostcards } from "@/app/actions"
+import { getPostcards } from "@/actions/actions"
 import SearchBar from "@/components/ui/SearchBar"
 import PostcardsResults from "@/components/search/PostcardsResults"
 import useDynamicSearch from "@/hooks/useDynamicSearch"

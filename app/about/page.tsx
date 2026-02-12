@@ -9,11 +9,10 @@ const AboutPage = () => {
         <div className="xl:space-y-28 md:space-y-16 space-y-12">
             <MainHeader
                 headerText="About our project"
-                subheaderText="Send messages to your loved ones - anymously"
-                description="Postcards Never Sent is a place for words you never had a chance to send.
-                            Write what you wish you had said, and who it was meant for.
-                            Your message goes nowhere, and belongs to no one. It stays here, shared anonymously,
-                            carried only by feeling."
+                subheaderText="Messages meant to be felt, not sent"
+                description="Postcards Never Sent is a quiet space for words that never found their destination.
+                    Share anonymous messages you couldn’t say out loud, read stories from strangers, and explore
+                    emotions addressed to nowhere, or maybe to everyone."
             />
 
             <WhyExists />

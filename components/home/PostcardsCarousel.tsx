@@ -17,11 +17,51 @@ const PostcardsCarousel: React.FC = () => {
     const scrollerRef = useRef<HTMLDivElement | null>(null)
 
     const items = [
-        <Postcard key="p1" stamp="flower" from="abc" to="xyz" text="Lorem ipsum dolor sit amet..." />,
-        <Postcard key="p2" stamp="flower" from="abc" to="xyz" text="Consectetur adipiscing elit..." />,
-        <Postcard key="p3" stamp="flower" from="abc" to="xyz" text="Quisque vel ligula iaculis..." />,
-        <Postcard key="p4" stamp="flower" from="abc" to="xyz" text="Suspendisse et ligula at nunc..." />,
-        <Postcard key="p5" stamp="flower" from="abc" to="xyz" text="Mauris rhoncus turpis ac venenatis..." />,
+        <Postcard
+            key="p1"
+            stamp="coffee"
+            from="The one who left"
+            to="The kitchen at 2 a.m."
+            text="I still expect to see you leaning against the counter,
+                half-asleep, pretending you weren’t waiting for me.
+                The apartment is quieter now. Even the fridge hum feels louder without
+                our unfinished conversations."
+        />,
+        <Postcard
+            key="p2"
+            stamp="books"
+            from="Your future self"
+            to="Me, right now"
+            text="You won’t always feel this lost. One day this confusion will become a story
+                you tell with a small smile. Keep going. The version of us who made it is
+                quietly rooting for you."
+        />,
+        <Postcard
+            key="p3"
+            stamp="pink flowers"
+            from="The friend who drifted away"
+            to="You"
+            text="We didn’t end with a fight. Just silence. I sometimes scroll to your name and
+                wonder if you’d answer. I hope life is gentle with you, even if we’re no longer
+                part of each other’s days."
+        />,
+        <Postcard
+            key="p4"
+            stamp="christmas"
+            from="Your daughter"
+            to="Dad"
+            text="I know you tried in the only ways you knew how. I needed different ones.
+                I’m still learning how to hold both gratitude and hurt in the same hand."
+        />,
+        <Postcard
+            key="p5"
+            stamp="mountains"
+            from="Someone you passed on the train"
+            to="The stranger with tired eyes"
+            text="You looked like you were carrying the whole week on your shoulders.
+                I almost told you it’s okay to rest. I didn’t. But I hope something small
+                and kind found you that day."
+        />,
     ]
 
     useEffect(() => {
@@ -72,7 +112,7 @@ const PostcardsCarousel: React.FC = () => {
 
     return (
         <div ref={containerRef} className="w-full relative overflow-visible" style={{ touchAction: "pan-y" }} >
-            <div ref={scrollerRef} className="flex gap-4 whitespace-nowrap items-start">
+            <div ref={scrollerRef} className="flex gap-4 items-start">
                 {
                     items.map((el, i) => (
                         <div key={`a-${i}`} className="flex-none">

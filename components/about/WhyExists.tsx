@@ -42,10 +42,13 @@ const WhyExists = () => {
         <section ref={containerRef} className="grid grid-cols-[36rem_1fr_36rem] gap-10 items-center w-full overflow-x-visible">
             <div ref={leftPostcardRef}>
                 <Postcard
-                    stamp="flower"
-                    from="abc"
-                    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel ligula iaculis, mollis tellus semper, aliquet felis. Suspendisse et ligula at nunc tincidunt egestas vitae ut eros. Aliquam quis sem ac ligula bibendum pellentesque eu sit amet enim. Mauris rhoncus turpis ac venenatis suscipit. In accumsan est at felis ornaresit amet finibus turpis ultrices. Nunc varius finibus laoreet."
-                    to="xyz"
+                    stamp="coffee"
+                    from="Me you loved"
+                    text="I replay our last conversation more than I admit. Not to change it — just to sit with the
+                        spaces between our words. We were both trying, just in different directions.
+                        I don’t blame you anymore. I just wish we had known that love isn’t always enough to
+                        make two futures align."
+                    to="The one who couldn’t stay"
                 />
             </div>
 
@@ -62,9 +65,11 @@ const WhyExists = () => {
             <div ref={rightPostcardRef}>
                 <Postcard
                     stamp="flower"
-                    from="abc"
-                    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel ligula iaculis, mollis tellus semper, aliquet felis. Suspendisse et ligula at nunc tincidunt egestas vitae ut eros. Aliquam quis sem ac ligula bibendum pellentesque eu sit amet enim. Mauris rhoncus turpis ac venenatis suscipit. In accumsan est at felis ornaresit amet finibus turpis ultrices. Nunc varius finibus laoreet."
-                    to="xyz"
+                    from="Your younger sibling"
+                    text="When I was little, you felt invincible. You fixed broken toys and scared away nightmares.
+                        Growing up meant realizing you were scared too. I’m sorry for the years I mistook your silence
+                        for strength. I hope one day we learn how to talk without armor."
+                    to="The hero"
                 />
             </div>
         </section>

@@ -6,10 +6,10 @@ const CreatePage = () => {
         <div className="space-y-28">
             <MainHeader
                 headerText="Create your postcard"
-                subheaderText="Submit your own postcard"
-                description="Create postcard to someone special to You. You can enter message to them,
-                    as well as your name or nickname and thair name or nickname. Then select ideal stamp
-                    and image for your postcard!"
+                subheaderText="Write what was never sent"
+                description="Create your anonymous postcard to someone, somewhere, or nowhere at all.
+                    Add who it’s from, who it’s to, write your message, and choose a stamp that carries its mood.
+                    No accounts. No judgment. Just words that needed a place to exist."
             />
 
             <CreateForm />
