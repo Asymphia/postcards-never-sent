@@ -19,7 +19,7 @@ const PostcardsResults = ({ error, loading, postcards }: { error?: string | null
     }
 
     return (
-        <div className="grid grid-cols-3 gap-5">
+        <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
             {
                 postcards && postcards.length > 0 && postcards.map(postcard => (
                     <Link href={`/postcards/${postcard.id}`} key={postcard.id}>

@@ -1,6 +1,8 @@
-const PostcardWrapper = ({ children } : { children: React.ReactNode }) => {
+import { ReactNode } from "react"
+
+const PostcardWrapper = ({ children } : { children: ReactNode }) => {
     return (
-        <div className="border-solid xl:border-8 md:border-6 border-4 border-accent outline-solid outline-2 outline-accent-dark xl:p-5 md:p-4 p-3 xl:h-[24rem] md:h-[20rem] h-[14rem] xl:max-w-[36rem] md:max-w-[32rem] max-w-[26rem] w-full box-border bg-bg">
+        <div className="border-solid border-accent outline-solid outline-2 outline-accent-dark border-4 md:border-6 xl:border-8 p-3 md:p-4 xl:p-5 w-full max-w-[26rem] md:max-w-[32rem] xl:max-w-[36rem] aspect-[3/2] min-h-fit relative flex flex-col box-border bg-bg overflow-hidden">
             { children }
         </div>
     )

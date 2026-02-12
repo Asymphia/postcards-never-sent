@@ -24,7 +24,7 @@ const TwoButtons = ({ leftText, rightText, rightHref, leftHref }: TwoButtonProps
     }
 
     return (
-        <div className="w-fit mx-auto space-x-4">
+        <div className="flex flex-nowrap gap-4 justify-center">
             <Button text={ leftText } onClick={handleLeftClick} />
 
             <Button text={ rightText } type="secondary" onClick={handleRightClick} />

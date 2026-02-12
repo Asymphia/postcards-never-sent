@@ -5,7 +5,7 @@ const Button = ({ text, type="primary", onClick }: { text: string, type?: "prima
     }
 
     return (
-        <button className={`min-w-52 px-20 py-2 rounded-sm cursor-pointer transition-all ${buttonStyle[type]}`} onClick={onClick}>
+        <button className={`xl:min-w-52 xl:px-20 md:px-12 px-8 py-2 rounded-sm cursor-pointer transition-all ${buttonStyle[type]}`} onClick={onClick}>
             { text }
         </button>
     )
