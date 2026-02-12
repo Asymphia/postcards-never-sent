@@ -3,6 +3,12 @@ import WhyExists from "@/components/about/WhyExists"
 import WhatMean from "@/components/about/WhatMean"
 import WhatHappens from "@/components/about/WhatHappens"
 import CreateYourOwn from "@/components/about/CreateYourOwn"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: "About us | Postcards Never Sent",
+    description: "Learn about Postcards Never Sent, a space for anonymous messages, unspoken words, and stories that were never delivered but still deeply felt."
+}
 
 const AboutPage = () => {
     return (

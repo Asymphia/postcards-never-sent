@@ -3,6 +3,7 @@
 import prisma from "@/lib/prisma"
 import { revalidatePath } from "next/cache"
 import { postcardStamp } from "@/components/postcards/PostcardStamp"
+import { cache } from "react"
 
 export interface CreatePostcardInput {
     from: string
@@ -44,7 +45,7 @@ export const getPostcards = async () => {
     }
 }
 
-export const getPostcard = async (id: number) => {
+export const getPostcard = cache(async (id: number) => {
     try {
         const result = await prisma.postcard.findUnique({ where: { id } })
 
@@ -56,4 +57,4 @@ export const getPostcard = async (id: number) => {
     } catch (error) {
         return { success: false, error: "Database fetching failed" }
     }
-}
+})

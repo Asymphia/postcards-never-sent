@@ -1,5 +1,11 @@
 import MainHeader from "@/components/ui/MainHeader"
 import SearchContent from "@/components/search/SearchContent"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: "Browse postcards | Postcards Never Sent",
+    description: "Discover anonymous postcards from strangers—messages never sent but full of emotion, stories, and confessions waiting to be read."
+}
 
 const MainPage = () =>  {
     return (

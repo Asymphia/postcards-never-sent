@@ -1,5 +1,11 @@
 import MainHeader from "@/components/ui/MainHeader"
 import ContactForm from "@/components/contact/ContactForm"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: "Contact us | Postcards Never Sent",
+    description: "Get in touch with the Postcards Never Sent team. Share questions, feedback, or ideas. The only messages here that actually arrive."
+}
 
 const ContactPage = () => {
     return (

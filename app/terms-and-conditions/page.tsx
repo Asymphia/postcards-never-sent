@@ -3,6 +3,12 @@ import { SECTIONS } from "@/lib/terms-and-conditions"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 import Anchor from "@/components/terms-and-conditions/Anchor"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: "Terms & conditions | Postcards Never Sent",
+    description: "Read the rules for using Postcards Never Sent. Learn how to share, browse, and interact safely while respecting privacy and community guidelines."
+}
 
 const TermsAndConditionsPage = () => {
     return (
