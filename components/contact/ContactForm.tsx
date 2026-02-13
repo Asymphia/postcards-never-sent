@@ -18,8 +18,8 @@ const ContactForm = () => {
     const [checked, setChecked] = useState<boolean>(false)
 
     return (
-        <form action={ action } className="xl:space-y-5 md:space-y-4 space-y-3 w-full max-w-[75rem] mx-auto">
-            <div className="grid grid-cols-2 xl:gap-5 md:gap-4 gap-3">
+        <form action={ action } className="xl:space-y-5 md:space-y-4 space-y-3">
+            <div className="grid md:grid-cols-2 grid-cols-1 xl:gap-5 md:gap-4 gap-3">
                 <Input name="whatHappened" placeholder="What happened?*" type="text" />
                 <Select />
                 <Input name="browser" placeholder="On which browser?*" type="text" />
