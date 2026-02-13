@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation"
-import { getPostcard } from "@/actions/actions"
+import { getPostcard } from "@/actions/postcards-actions"
 import Modal from "@/components/ui/Modal"
 import FullCard from "@/components/single-postcard/FullCard"
 

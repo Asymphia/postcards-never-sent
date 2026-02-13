@@ -15,3 +15,26 @@ model Postcard {
   stampText String
   createdAt DateTime @default(now())
 }
+
+enum DeviceType {
+  PHONE
+  TABLET
+  PC
+  OTHER
+}
+
+enum BugStatus {
+  OPEN
+  RESOLVED
+}
+
+model BugReport {
+  id           Int        @id @default(autoincrement())
+  whatHappened String
+  device       DeviceType
+  browser      String
+  page         String
+  details      String?
+  status       BugStatus  @default(OPEN)
+  createdAt    DateTime   @default(now())
+}
