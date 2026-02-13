@@ -133,7 +133,7 @@ const SecondStep = ({ text, from, to, selectedStamp, setSelectedStamp }: SecondS
 
 
                         <div className="flex flex-col justify-between items-end">
-                            <div className={`xl:size-16 md:size-14 size-12 border-2 border-solid  transition-all ${!selectedStamp ? "border-accent" : "border-bg"}`} ref={dropTargetRef}>
+                            <div className={`xl:size-16 md:size-14 size-12 border-2 border-solid transition-all ${!selectedStamp ? "border-accent" : "border-bg"}`} ref={dropTargetRef}>
 
                             </div>
 
