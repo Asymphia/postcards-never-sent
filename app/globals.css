@@ -45,20 +45,20 @@ ul {
     @apply list-disc space-y-1 my-1 xl:pl-16 md:pl-12 pl-8;
 }
 
-.postcard-text::-webkit-scrollbar {
+.postcard-text::-webkit-scrollbar, .textarea::-webkit-scrollbar {
     width: 2px;
     background-color: #F6F3EF;
 }
 
-.postcard-text::-webkit-scrollbar-thumb {
+.postcard-text::-webkit-scrollbar-thumb, .textarea::-webkit-scrollbar-thumb {
     background-color: #F6F3EF;
     transition: all .2s ease-in-out;
 }
 
-.postcard-text:hover::-webkit-scrollbar-thumb {
+.postcard-text:hover::-webkit-scrollbar-thumb, .textarea:hover::-webkit-scrollbar-thumb {
     background-color: #C26A5A;
 }
 
-.postcard-text:hover::-webkit-scrollbar-thumb:active {
+.postcard-text:hover::-webkit-scrollbar-thumb:active, .textarea:hover::-webkit-scrollbar-thumb:active {
     background-color: #A95447;
 }

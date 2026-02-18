@@ -33,7 +33,7 @@ const FirstStep = ({ from, onChangeFrom, to, onChangeTo, text, onChangeText }: F
                             onChange={onChangeText}
                             maxLength={maxCharacters}
                             placeholder="Enter your message here..."
-                            className={`resize-none focus:outline-none h-full w-full ${isOverflowing ? "text-accent" : "text-text"}`}
+                            className={`textarea resize-none focus:outline-none h-full w-full ${isOverflowing ? "text-accent" : "text-text"}`}
                         />
 
                         <p className={`absolute right-0 bottom-0 ${isOverflowing ? "text-accent" : "text-text"}`}>

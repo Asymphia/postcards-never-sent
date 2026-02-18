@@ -34,6 +34,15 @@ const CreateForm = () => {
         } else if(!text) {
             setError("You must provide the message!")
             return
+        } else if (text.length > 400) {
+            setError("Your message cannot be longer than 400 characters!")
+            return
+        } else if (from.length > 20) {
+            setError("'From' field cannot be longer than 20 characters!")
+            return
+        } else if (to.length > 20) {
+            setError("'To' field cannot be longer than 20 characters!")
+            return
         }
 
         setCurrentStep(prevStep => prevStep + 1)

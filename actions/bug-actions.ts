@@ -30,6 +30,14 @@ export const reportBug = async (prevState: unknown, formData: FormData): Promise
             return { success: false, submitted: true, error: "Invalid device value." }
         }
 
+        if(details && details.length > 1200) {
+            return { success: false, submitted: true, error: "Details cannot be longer than 1200 characters." }
+        }
+
+        if(whatHappened.length > 30 || browser.length > 30 || page.length > 30) {
+            return { success: false, submitted: true, error: "Fields cannot be longer than 30 characters." }
+        }
+
         const newBugReport = await prisma.bugReport.create({
             data: {
                 whatHappened,

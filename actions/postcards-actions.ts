@@ -14,6 +14,14 @@ export interface CreatePostcardInput {
 
 export const createPostcard = async (data: CreatePostcardInput) => {
     try {
+        if (!data.from || !data.to || !data.text || !data.selectedStamp) {
+            return { success: false, error: "All fields are required!" }
+        } else if (data.text.length > 400) {
+            return { success: false, error: "Text cannot be longer than 400 characters!" }
+        } else if (data.from.length > 20 || data.to.length > 20) {
+            return { success: false, error: "'From' and 'To' fields cannot be longer than 20 characters!" }
+        }
+
         const newMessage = await prisma.postcard.create({
             data: {
                 from: data.from,
