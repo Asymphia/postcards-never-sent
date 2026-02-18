@@ -11,9 +11,9 @@ const ErrorPage = () => {
                 </svg>
 
                 <header className="text-center xl:space-y-6 md:space-y-4 space-y-3">
-                    <h1> An error occurred </h1>
+                    <h1> Error </h1>
 
-                    <p> Please try again later </p>
+                    <p> An error occurred. Please try again later </p>
                 </header>
             </div>
 
