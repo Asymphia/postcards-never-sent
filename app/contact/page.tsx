@@ -1,7 +1,7 @@
 import MainHeader from "@/components/ui/MainHeader"
 import ContactForm from "@/components/contact/ContactForm"
 import type { Metadata } from "next"
-import Button from "@/components/ui/Button";
+import Button from "@/components/ui/Button"
 
 export const metadata: Metadata = {
     title: "Contact us | Postcards Never Sent",

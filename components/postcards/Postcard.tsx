@@ -14,7 +14,7 @@ const Postcard = ({ text, from, to, stamp }: PostcardProps) => {
     return (
         <PostcardWrapper>
             <div className="h-full grid grid-cols-2 xl:space-x-6 md:space-x-4 space-x-2">
-                <p className="overflow-hidden">
+                <p className="overflow-y-auto break-all postcard-text">
                     { text }
                 </p>
 
