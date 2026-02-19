@@ -1,13 +1,12 @@
-import { ChangeEvent, RefObject } from "react"
+import { ChangeEvent } from "react"
 
 interface TextareaProps {
     placeholder: string
     name: string
-    text: string
-    onChangeText: (e: ChangeEvent<HTMLTextAreaElement>) => void
+    onChangeText?: (e: ChangeEvent<HTMLTextAreaElement>) => void
 }
 
-const Textarea = ({ placeholder, name, text, onChangeText }: TextareaProps) => {
+const Textarea = ({ placeholder, name, onChangeText }: TextareaProps) => {
     return (
         <textarea
             maxLength={1200}

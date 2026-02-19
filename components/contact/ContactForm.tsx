@@ -4,7 +4,7 @@ import Input from "./Input"
 import Textarea from "@/components/contact/Textarea"
 import Button from "@/components/ui/Button"
 import Checkbox from "@/components/contact/Checkbox"
-import {useActionState, useEffect, useRef, useState} from "react"
+import {useActionState, useState} from "react"
 import { useFormStatus } from "react-dom"
 import { ActionResponse, reportBug } from "@/actions/bug-actions"
 import Select from "@/components/contact/Select"
@@ -30,7 +30,7 @@ const ContactForm = () => {
             </div>
 
             <div className="relative">
-                <Textarea name="details" placeholder="Detailed info" text={text} onChangeText={e => setText(e.target.value)} />
+                <Textarea name="details" placeholder="Detailed info" onChangeText={e => setText(e.target.value)} />
 
                 <p className={`absolute right-4 bottom-4 ${text.length >= maxCharacters ? "text-accent" : "text-text"}`}>
                     {text.length} / {maxCharacters}

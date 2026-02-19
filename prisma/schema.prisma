@@ -8,12 +8,13 @@ datasource db {
 }
 
 model Postcard {
-  id        Int      @id @default(autoincrement())
-  from      String
-  to        String
-  message   String   @db.Text
-  stampText String
-  createdAt DateTime @default(now())
+  id             Int              @id @default(autoincrement())
+  from           String
+  to             String
+  message        String           @db.Text
+  stampText      String
+  createdAt      DateTime         @default(now())
+  PostcardReport PostcardReport[]
 }
 
 enum DeviceType {
@@ -37,4 +38,23 @@ model BugReport {
   details      String?
   status       BugStatus  @default(OPEN)
   createdAt    DateTime   @default(now())
+}
+
+enum ReportReason {
+  INAPPROPRIATE_LANGUAGE
+  HATE_SPEECH
+  SPAM
+  HARASSMENT
+  COPYRIGHT_VIOLATION
+  OTHER
+}
+
+model PostcardReport {
+  id         Int          @id @default(autoincrement())
+  postcard   Postcard     @relation(fields: [postcardId], references: [id])
+  postcardId Int
+  reason     ReportReason
+  details    String?
+  status     BugStatus    @default(OPEN)
+  createdAt  DateTime     @default(now())
 }
