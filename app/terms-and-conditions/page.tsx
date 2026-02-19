@@ -15,7 +15,7 @@ const TermsAndConditionsPage = () => {
         <div className="xl:space-y-28 md:space-y-16 space-y-12">
             <MainHeader
                 headerText="Terms & conditions"
-                subheaderText="Last updated: 20 January 2026"
+                subheaderText="Last updated: 19 February 2026"
                 description="These Terms & Conditions outline the rules for using Postcards Never Sent.
                     By accessing or submitting a postcard, you agree to respect our guidelines,
                     protect others’ privacy, and use this space responsibly and lawfully."
