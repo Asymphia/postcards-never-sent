@@ -6,6 +6,7 @@ import Button from "@/components/ui/Button"
 import { useActionState, useState } from "react"
 import { useFormStatus } from "react-dom"
 import { ActionResponse, reportPostcard } from "@/actions/report-actions"
+import Select from "@/components/contact/Select"
 
 const ReportPostcard = ({ postcardId }: { postcardId: number }) => {
     const initialState: ActionResponse = { success: false, submitted: false, error: null }
@@ -35,15 +36,14 @@ const ReportPostcard = ({ postcardId }: { postcardId: number }) => {
                             </h2>
 
                             <form className="space-y-4 text-right" action={ action }>
-                                <select name="reason" defaultValue="" className="border-1 border-solid border-accent w-full md:px-5 px-3 py-2 rounded-sm transition-all focus:border-accent-dark focus:outline-0 text-text placeholder:text-text focus:text-accent-dark">
-                                    <option value="" disabled hidden>Reason of report*</option>
-                                    <option value="INAPPROPRIATE_LANGUAGE">Inappropriate language</option>
-                                    <option value="HATE_SPEECH">Hate speech</option>
-                                    <option value="SPAM">Spam</option>
-                                    <option value="HARASSMENT">Harassment</option>
-                                    <option value="COPYRIGHT_VIOLATION">Copyright violation</option>
-                                    <option value="OTHER">Other</option>
-                                </select>
+                                <Select name="reason" defaultValue="Reason of a report*" options={[
+                                    { value: "INAPPROPRIATE_LANGUAGE", text: "Inappropriate language" },
+                                    { value: "HATE_SPEECH", text: "Hate speech" },
+                                    { value: "SPAM", text: "Spam" },
+                                    { value: "HARASSMENT", text: "Harassment" },
+                                    { value: "COPYRIGHT_VIOLATION", text: "Copyright violation" },
+                                    { value: "OTHER", text: "Other" }
+                                ]} />
 
                                 <div className="relative">
                                     <Textarea name="details" placeholder="Details" onChangeText={e => setText(e.target.value)} />

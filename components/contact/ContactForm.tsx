@@ -24,8 +24,16 @@ const ContactForm = () => {
         <form action={ action } className="xl:space-y-5 md:space-y-4 space-y-3">
             <div className="grid md:grid-cols-2 grid-cols-1 xl:gap-5 md:gap-4 gap-3">
                 <Input name="whatHappened" placeholder="What happened? (shortly)*" type="text" />
-                <Select />
+
+                <Select name="device" defaultValue="On what device?" options={[
+                    { value: "PHONE", text: "Phone" },
+                    { value: "TABLET", text: "Tablet" },
+                    { value: "PC", text: "PC" },
+                    { value: "OTHER", text: "Other" }
+                ]} />
+
                 <Input name="browser" placeholder="On which browser?*" type="text" />
+
                 <Input name="page" placeholder="Which page contains a bug?*" type="text" />
             </div>
 
