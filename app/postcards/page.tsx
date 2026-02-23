@@ -1,6 +1,8 @@
 import MainHeader from "@/components/ui/MainHeader"
 import SearchContent from "@/components/search/SearchContent"
 import type { Metadata } from "next"
+import { Suspense } from "react"
+import Loader from "@/components/ui/Loader"
 
 export const metadata: Metadata = {
     title: "Browse postcards | Postcards Never Sent",
@@ -18,7 +20,9 @@ const MainPage = () =>  {
                     — but still carry meaning, honesty, and emotion."
             />
 
-            <SearchContent />
+            <Suspense fallback={<Loader />}>
+                <SearchContent />
+            </Suspense>
         </div>
     )
 }

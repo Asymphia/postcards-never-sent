@@ -40,13 +40,14 @@ export const createPostcard = async (data: CreatePostcardInput) => {
 
 export const getPostcards = async () => {
     try {
-        const result = await prisma.postcard.findMany({})
+        const result = await prisma.postcard.findMany({
+            orderBy: { createdAt: "desc" }
+        })
 
         if (!result) {
             return { success: true, result: null }
         }
 
-        revalidatePath("/")
         return { success: true, result: result }
     } catch (error) {
         return { success: false, error: "Database fetching failed" }
