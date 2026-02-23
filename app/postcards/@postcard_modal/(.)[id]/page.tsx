@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation"
-import { getPostcard } from "@/actions/postcards-actions"
 import Modal from "@/components/ui/Modal"
-import FullCard from "@/components/single-postcard/FullCard"
+import PostcardContent from "@/components/single-postcard/PostcardContent"
+import { Suspense } from "react"
+import Loader from "@/components/ui/Loader"
 
 const PostcardModal = async ({ params }: { params: { id: string } }) => {
     const { id } = await params
@@ -11,19 +12,12 @@ const PostcardModal = async ({ params }: { params: { id: string } }) => {
         notFound()
     }
 
-    const results = await getPostcard(numericId)
-
-    if(!results.success) {
-        throw new Error(results.error || "An error occurred")
-    }
-
-    const postcard = results.result
-    if (!postcard) notFound()
-
     return (
         <Modal additionalStyles={false}>
             <div className="xl:w-[36rem] md:w-[32rem] w-[26rem]">
-                <FullCard postcard={postcard} type="single" />
+                <Suspense fallback={<Loader />} >
+                    <PostcardContent id={ numericId } />
+                </Suspense>
             </div>
         </Modal>
     )

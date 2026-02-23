@@ -81,3 +81,5 @@ next-env.d.ts
 .parcel-cache/
 .turbo/
 /lib/generated/prisma
+# Prisma generated client
+/prisma/client/
