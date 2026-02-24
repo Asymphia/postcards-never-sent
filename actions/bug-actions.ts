@@ -1,6 +1,7 @@
 "use server"
 
 import prisma from "@/lib/prisma"
+import { DeviceType, Page } from "@prisma/client"
 
 export type ActionResponse = {
     success: boolean
@@ -46,9 +47,9 @@ export const reportBug = async (prevState: unknown, formData: FormData): Promise
         const newBugReport = await prisma.bugReport.create({
             data: {
                 whatHappened,
-                device: device as any,
+                device: device as DeviceType,
                 browser,
-                page,
+                page: page as Page,
                 details: details || null
             }
         })
