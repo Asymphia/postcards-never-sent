@@ -4,7 +4,6 @@ import Modal from "@/components/ui/Modal"
 import Textarea from "@/components/contact/Textarea"
 import Button from "@/components/ui/Button"
 import { useActionState, useState } from "react"
-import { useFormStatus } from "react-dom"
 import { ActionResponse, reportPostcard } from "@/actions/report-actions"
 import Select from "@/components/contact/Select"
 
@@ -17,7 +16,6 @@ const ReportPostcard = ({ postcardId }: { postcardId: number }) => {
     const maxCharacters = 1200
 
     const [state, action] = useActionState(reportPostcard.bind(null, postcardId), initialState)
-    const status = useFormStatus()
 
     return (
         <>
@@ -53,7 +51,7 @@ const ReportPostcard = ({ postcardId }: { postcardId: number }) => {
                                     </p>
                                 </div>
 
-                                <Button text={status.pending ? "Submitting..." : "Submit"} disabled={status.pending} />
+                                <Button text={"Submit"} />
                             </form>
 
                             {
