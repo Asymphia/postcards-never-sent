@@ -4,8 +4,7 @@ import Input from "./Input"
 import Textarea from "@/components/contact/Textarea"
 import Button from "@/components/ui/Button"
 import Checkbox from "@/components/contact/Checkbox"
-import {useActionState, useState} from "react"
-import { useFormStatus } from "react-dom"
+import {useActionState, useEffect, useState} from "react"
 import { ActionResponse, reportBug } from "@/actions/bug-actions"
 import Select from "@/components/contact/Select"
 
@@ -16,9 +15,15 @@ const ContactForm = () => {
     const maxCharacters = 1200
 
     const [state, action] = useActionState(reportBug, initialState)
-    const status = useFormStatus()
 
     const [checked, setChecked] = useState<boolean>(false)
+
+    useEffect(() => {
+        if (state.submitted && state.success) {
+            setChecked(false)
+            setText("")
+        }
+    }, [state.submitted, state.success])
 
     return (
         <form action={ action } className="xl:space-y-5 md:space-y-4 space-y-3">
@@ -34,7 +39,15 @@ const ContactForm = () => {
 
                 <Input name="browser" placeholder="On which browser?*" type="text" />
 
-                <Input name="page" placeholder="Which page contains a bug?*" type="text" />
+                <Select name="page" defaultValue="Which page contains a bug?*" options={[
+                    { value: "HOME", text: "Home page" },
+                    { value: "BROWSE_POSTCARDS", text: "Browse postcards" },
+                    { value: "SINGLE_POSTCARD", text: "Single postcard" },
+                    { value: "CREATE_POSTCARD", text: "Create postcard" },
+                    { value: "ABOUT_US", text: "About us" },
+                    { value: "CONTACT_US", text: "Contact us" },
+                    { value: "TERMS_AND_CONDITIONS", text: "Terms & conditions" }
+                ]} />
             </div>
 
             <div className="relative">
@@ -49,7 +62,7 @@ const ContactForm = () => {
             <Checkbox isChecked={checked} toggleChecked={() => setChecked(prev => !prev)} name="agreement" />
 
             <div className="w-fit ml-auto">
-                <Button text={status.pending ? "Sending…" : "Submit"} disabled={status.pending} />
+                <Button text="Submit" />
             </div>
 
             <div className="text-accent">

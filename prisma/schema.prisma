@@ -24,6 +24,16 @@ enum DeviceType {
   OTHER
 }
 
+enum Page {
+  HOME
+  BROWSE_POSTCARDS
+  SINGLE_POSTCARD
+  CREATE_POSTCARD
+  ABOUT_US
+  CONTACT_US
+  TERMS_AND_CONDITIONS
+}
+
 enum BugStatus {
   OPEN
   RESOLVED
@@ -34,7 +44,7 @@ model BugReport {
   whatHappened String
   device       DeviceType
   browser      String
-  page         String
+  page         Page
   details      String?
   status       BugStatus  @default(OPEN)
   createdAt    DateTime   @default(now())
