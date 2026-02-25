@@ -28,7 +28,7 @@ const ReportPostcard = ({ postcardId }: { postcardId: number }) => {
             {
                 isOpen && (
                     <Modal additionalStyles={false} href="none" onClick={() => setIsOpen(false)}>
-                        <div className="bg-bg xl:p-6 md:p-5 p-4 rounded-sm xl:space-y-10 md:space-y-8 space-y-6">
+                        <div className="bg-bg xl:p-6 md:p-5 p-4 rounded-sm xl:space-y-10 md:space-y-8 space-y-6 lg:w-fit md:[w-60vw] w-[80vw]">
                             <h2 className="text-center">
                                 Report a postcard
                             </h2>

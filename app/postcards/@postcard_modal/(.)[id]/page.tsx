@@ -14,11 +14,9 @@ const PostcardModal = async ({ params }: { params: { id: string } }) => {
 
     return (
         <Modal additionalStyles={false}>
-            <div className="xl:w-[36rem] md:w-[32rem] w-[26rem]">
-                <Suspense fallback={<Loader />} >
-                    <PostcardContent id={ numericId } />
-                </Suspense>
-            </div>
+            <Suspense fallback={<Loader />} >
+                <PostcardContent id={ numericId } />
+            </Suspense>
         </Modal>
     )
 }
