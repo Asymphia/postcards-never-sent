@@ -39,7 +39,7 @@ const WhyExists = () => {
     }, [])
 
     return (
-        <section ref={containerRef} className="md:grid md:grid-cols-[36rem_1fr_36rem] md:gap-10 md:space-y-0 space-y-8 items-center w-full overflow-x-visible">
+        <section ref={containerRef} className="md:grid md:grid-cols-[36rem_1fr_36rem] md:gap-10 md:space-y-0 space-y-8 items-center w-full xl:overflow-x-visible overflow-x-hidden">
             <div ref={leftPostcardRef} className="md:block hidden">
                 <Postcard
                     stamp="coffee"

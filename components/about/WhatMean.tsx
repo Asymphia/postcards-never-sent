@@ -2,7 +2,7 @@ import NotesContainer from "@/components/about/NotesContainer"
 
 const WhatMean = () => {
     return (
-        <section className="overflow-visible">
+        <section className="xl:overflow-x-visible overflow-x-hidden">
             <h2 className="text-center xl:mb-30 md:mb-20 mb-14">
                 What a "postcard" even mean here?
             </h2>

@@ -31,7 +31,7 @@ export const createPostcard = async (data: CreatePostcardInput) => {
             },
         })
 
-        revalidatePath("/")
+        revalidatePath("/postcards")
         return { success: true, id: newMessage.id }
     } catch (error) {
         return { success: false, error: "Database submission failed" }

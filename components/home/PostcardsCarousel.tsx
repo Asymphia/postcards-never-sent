@@ -1,8 +1,8 @@
 "use client"
 
-import React, { useEffect, useRef } from "react"
+import React, {useEffect, useRef} from "react"
 import gsap from "gsap"
-import { Observer } from "gsap/dist/Observer"
+import {Observer} from "gsap/dist/Observer"
 import Postcard from "@/components/postcards/Postcard"
 
 gsap.registerPlugin(Observer);
@@ -12,7 +12,7 @@ const MAX_SPEED = 3
 const BASE_IDLE_SPEED = 0.05
 const DECAY = 0.2
 
-const PostcardsCarousel: React.FC = () => {
+const PostcardsCarousel = () => {
     const containerRef = useRef<HTMLDivElement | null>(null)
     const scrollerRef = useRef<HTMLDivElement | null>(null)
 
@@ -70,8 +70,12 @@ const PostcardsCarousel: React.FC = () => {
         const scroller = scrollerRef.current
         const container = containerRef.current
 
-        const totalScrollWidth = scroller.scrollWidth
-        const singleWidth = totalScrollWidth / 2 || container.clientWidth
+        const getSingleWidth = () => {
+            const totalScrollWidth = scroller.scrollWidth || 0
+            return Math.max(totalScrollWidth / 2, container.clientWidth)
+        }
+
+        let singleWidth = getSingleWidth()
 
         let pos = 0
         let velocity = BASE_IDLE_SPEED
@@ -102,20 +106,27 @@ const PostcardsCarousel: React.FC = () => {
             scroller.style.transform = `translate3d(${wrapped}px, 0, 0)`
         }
 
+        const onResize = () => {
+            singleWidth = getSingleWidth()
+        }
+
+        window.addEventListener("resize", onResize)
+
         gsap.ticker.add(tick)
 
         return () => {
             gsap.ticker.remove(tick)
             observer?.kill()
+            window.removeEventListener("resize", onResize)
         }
     }, [])
 
     return (
-        <div ref={containerRef} className="w-full relative overflow-visible" style={{ touchAction: "pan-y" }} >
-            <div ref={scrollerRef} className="flex gap-4 items-start">
+        <div ref={containerRef} className="w-full relative xl:overflow-visible overflow-hidden touch-none" style={{ touchAction: "pan-y" }} >
+            <div ref={scrollerRef} className="flex gap-4 items-center w-max will-change-transform" style={{ transform: "translate3d(0,0,0)" }}>
                 {
                     items.map((el, i) => (
-                        <div key={`a-${i}`} className="flex-none">
+                        <div key={`a-${i}`} className="flex-shrink-0 flex items-center justify-center">
                             {el}
                         </div>
                     ))
@@ -123,14 +134,14 @@ const PostcardsCarousel: React.FC = () => {
 
                 {
                     items.map((el, i) => (
-                        <div key={`b-${i}`} className="flex-none">
+                        <div key={`b-${i}`} className="flex-shrink-0 flex items-center justify-center">
                             {el}
                         </div>
                     ))
                 }
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default PostcardsCarousel;
+export default PostcardsCarousel
